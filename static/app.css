@@ -1,0 +1,35 @@
+.drag-area {
+    border: 3px dashed #e0eafc;
+}
+
+.drag-area .icon {
+    font-size: 3.125rem; /* 50px */
+    color: #1683ff;
+}
+
+.drag-area .header {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 500;
+    color: #34495e;
+}
+
+.drag-area .support {
+    font-size: 0.75rem; /* 12px */
+    color: gray;
+    margin: 0.625rem 0 0.9375rem 0; /* 10px 0 15px 0 */
+}
+
+.drag-area .button {
+    color: #1683ff;
+    cursor: pointer;
+}
+
+.drag-area.active {
+    border: 2px solid #1683ff;
+}
+
+.drag-area img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
