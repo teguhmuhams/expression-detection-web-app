@@ -45,7 +45,7 @@ def postprocess_prediction(prediction):
 
     # Convert to a readable format
     response = {
-        'predicted_class': int(predicted_class_index),
+        # 'predicted_class': int(predicted_class_index),
         'confidence': float(np.max(prediction)),
         'label': predicted_class_label
     }
