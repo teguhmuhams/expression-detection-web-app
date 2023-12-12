@@ -21,7 +21,7 @@
     </head>
     <body>
         <div
-            class="container-fluid vh-100 d-flex justify-content-center align-items-center bg-primary bg-gradient"
+            class="container-fluid min-vh-100 d-flex justify-content-center align-items-center bg-primary bg-gradient"
         >
             <div class="container bg-white h-75 position-relative">
                 <div
@@ -72,8 +72,12 @@
                                 Upload
                             </button>
                         </form>
-                        <p class="fs-1 lead mt-3">Results:</p>
-                        <p id="results"></p>
+                        <div id="results">
+                            <p class="fs-1 lead mt-3">Results:</p>
+                            <p id="predictedClass"></p>
+                            <p id="confidence"></p>
+                            <p id="label"></p>
+                        </div>
                     </div>
                 </div>
             </div>

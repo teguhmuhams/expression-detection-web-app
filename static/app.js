@@ -7,6 +7,10 @@ let button = dropArea.querySelector(".button");
 let input = dropArea.querySelector("input");
 let submitBtn = document.querySelector("#submit");
 
+let predictedConfidence = document.querySelector("#confidence");
+let predictedLabel = document.querySelector("#label");
+let predictedClass = document.querySelector("#predictedClass");
+
 let file;
 
 let preview = document.createElement("img");
@@ -51,7 +55,8 @@ dropArea.addEventListener("drop", (event) => {
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
-
+    dropArea.classList.remove("active");
+    dragText.textContent = "Drag & Drop";
     uploadFile(file);
 });
 
@@ -69,13 +74,15 @@ function uploadFile(file) {
     formData.append("file", file);
 
     // Example POST request with FormData
-    fetch("", {
+    fetch("/predict", {
         method: "POST",
         body: formData,
     })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Success:", data);
+            predictedConfidence.textContent = `Confidence: ${data.confidence}`;
+            predictedLabel.textContent = `Label: ${data.label}`;
+            predictedClass.textContent = `Class: ${data.predicted_class}`;
         })
         .catch((error) => {
             console.error("Error:", error);

@@ -33,3 +33,7 @@
     height: auto;
     object-fit: cover;
 }
+
+.min-vh-100 {
+    min-height: 100vh;
+}
